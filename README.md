@@ -52,7 +52,7 @@ Fifteen checks, each producing its own finding with a plain-language explanation
 | Suspicious keywords in path/query | 5 | `login`, `verify`, `secure`, … |
 | Very long URL / host | 5 | Addresses designed to hide their tail |
 
-**Fail-safe by design.** Unknown or ambiguous input resolves toward *not* flagging: private IPs and localhost are exempt from the IP check, unknown permissions of judgement (unknown domains, system-like hosts) are never flagged, and suspicious keywords only count when another signal is already present. The highest single finding is 30 points, so **no single signal can ever produce a Malicious verdict** — corroboration is always required (verified by test).
+**Fail-safe by design.** Unknown or ambiguous input resolves toward *not* flagging: private IPs and localhost are exempt from the IP check, unknown domains and system-like hosts are never flagged, and suspicious keywords only count when another signal is already present. The highest single finding is 30 points, so **no single signal can ever produce a Malicious verdict** — corroboration is always required (verified by test).
 
 **Bands** (Balanced sensitivity): Safe 0–24 · Suspicious 25–59 · Malicious 60–100.
 Strict moves them to 15 / 45; Lenient to 35 / 70.
