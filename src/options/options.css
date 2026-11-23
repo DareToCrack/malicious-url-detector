@@ -1,0 +1,56 @@
+/* URL Sentinel options page — simple light palette. */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #22262b;
+  background: #f7f7f4;
+}
+.wrap { max-width: 640px; margin: 0 auto; padding: 32px 16px 48px; }
+.header h1 { margin: 0; font-size: 22px; }
+.subtitle { margin: 4px 0 0; color: #667085; }
+.card {
+  background: #ffffff;
+  border: 1px solid #e7e4de;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-top: 14px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.card h2 { margin: 0 0 6px; font-size: 15px; }
+.help { color: #667085; font-size: 13px; line-height: 1.6; margin: 0 0 10px; }
+.help a { color: #2563eb; }
+.radio, .check { display: block; margin: 8px 0; line-height: 1.5; cursor: pointer; }
+.radio input, .check input { margin-right: 6px; }
+.field-label { display: block; font-weight: 600; font-size: 13px; margin: 12px 0 4px; }
+input[type="password"], textarea {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #e7e4de;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #22262b;
+  background: #ffffff;
+}
+textarea { resize: vertical; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+.row { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #e7e4de;
+  background: #ffffff;
+  color: #22262b;
+  font-size: 13px;
+  cursor: pointer;
+}
+.btn:hover { background: #f7f7f4; }
+.btn-primary { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+.btn-primary:hover { background: #1d4ed8; }
+.test-result { font-size: 13px; color: #667085; }
+.test-result.ok { color: #15803d; }
+.test-result.bad { color: #b91c1c; }
+.save-row { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
+.saved { color: #15803d; font-size: 13px; }
+.fine-print { color: #667085; font-size: 12px; line-height: 1.6; margin-top: 20px; }

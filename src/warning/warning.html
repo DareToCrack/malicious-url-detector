@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warning — URL Sentinel</title>
+<link rel="stylesheet" href="warning.css">
+</head>
+<body>
+<main class="wrap">
+  <div class="card">
+    <div class="shield" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="44" height="44"><path fill="#b91c1c" d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5l7-3zm-1 6h2v6h-2V8zm0 8h2v2h-2v-2z"/></svg>
+    </div>
+    <h1>This site looks malicious</h1>
+    <p class="intro">URL Sentinel stopped this page because the address strongly matches malicious patterns. The site may try to steal your passwords or personal details.</p>
+
+    <div class="url-box" id="url-box"></div>
+
+    <div class="score-row">
+      <span class="score" id="score"></span>
+      <span class="band band-malicious" id="band">Malicious</span>
+    </div>
+
+    <h2>Why this was blocked</h2>
+    <div id="findings"></div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="back-btn">← Go back to safety</button>
+      <button class="btn" id="proceed-btn">Proceed anyway (not recommended)</button>
+    </div>
+    <p class="fine-print">“Proceed anyway” allows this exact address for 30 minutes only. The warning will return after that, or if the address changes.</p>
+    <p class="fine-print">Think this is a mistake? Add the site to your allowlist in <a href="../options/options.html" target="_blank" rel="noopener">Options</a> — or check the address carefully for misspellings first.</p>
+  </div>
+</main>
+<script type="module" src="warning.js"></script>
+</body>
+</html>

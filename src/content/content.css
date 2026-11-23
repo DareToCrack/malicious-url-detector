@@ -1,0 +1,30 @@
+/* URL Sentinel link markers — small, unobtrusive, light palette. */
+.url-sentinel-marker {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1;
+  margin-left: 3px;
+  padding: 1px 4px;
+  border-radius: 999px;
+  font-weight: 700;
+  vertical-align: baseline;
+  cursor: help;
+}
+.url-sentinel-marker-suspicious {
+  color: #b45309;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+}
+.url-sentinel-marker-malicious {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+a.url-sentinel-suspicious {
+  text-decoration: underline dotted #b45309;
+  text-underline-offset: 2px;
+}
+a.url-sentinel-malicious {
+  text-decoration: underline dotted #b91c1c;
+  text-underline-offset: 2px;
+}

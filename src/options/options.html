@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>URL Sentinel — Options</title>
+<link rel="stylesheet" href="options.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="header">
+    <h1>URL Sentinel</h1>
+    <p class="subtitle">Malicious URL Detector — Options</p>
+  </header>
+
+  <section class="card">
+    <h2>Sensitivity</h2>
+    <p class="help">Sensitivity moves the score thresholds. Strict flags sooner (more warnings, more false positives); lenient flags later.</p>
+    <label class="radio"><input type="radio" name="sensitivity" value="strict"> <strong>Strict</strong> — Suspicious from 15, Malicious from 45</label>
+    <label class="radio"><input type="radio" name="sensitivity" value="balanced"> <strong>Balanced</strong> — Suspicious from 25, Malicious from 60 (recommended)</label>
+    <label class="radio"><input type="radio" name="sensitivity" value="lenient"> <strong>Lenient</strong> — Suspicious from 35, Malicious from 70</label>
+  </section>
+
+  <section class="card">
+    <h2>Google Safe Browsing (optional reputation lookup)</h2>
+    <p class="help">Without a key, URL Sentinel works offline with heuristics only and no data leaves your device. With a key, every visited URL is also checked against Google Safe Browsing — which means <strong>the URLs you visit are sent to Google's API</strong>. A match overrides the verdict to Malicious. Get a free key from the <a href="https://console.cloud.google.com/apis/library/safebrowsing.googleapis.com" target="_blank" rel="noopener">Google Cloud Console</a> (Safe Browsing API).</p>
+    <label class="field-label" for="sb-key">API key</label>
+    <input type="password" id="sb-key" placeholder="Paste your Safe Browsing API key (optional)" autocomplete="off">
+    <div class="row">
+      <button class="btn" id="test-key-btn" type="button">Test key</button>
+      <span class="test-result" id="test-result"></span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Protection</h2>
+    <label class="check"><input type="checkbox" id="enable-blocking"> <strong>Block malicious sites</strong> — redirect to a warning page before a Malicious site loads</label>
+    <label class="check"><input type="checkbox" id="enable-link-scanning"> <strong>Scan links on pages</strong> — mark suspicious links and warn before following malicious ones</label>
+    <label class="check"><input type="checkbox" id="enable-badge"> <strong>Show risk badge</strong> — amber “!” for Suspicious, red “!!” for Malicious on the toolbar icon</label>
+  </section>
+
+  <section class="card">
+    <h2>Custom lists</h2>
+    <p class="help">One entry per line — a domain (example.com, matches subdomains too) or part of a URL. The allowlist always wins over every other check, including your own blocklist.</p>
+    <label class="field-label" for="blocklist">Blocklist — always warn on these</label>
+    <textarea id="blocklist" rows="4" placeholder="bad-example.com"></textarea>
+    <label class="field-label" for="allowlist">Allowlist — never flag or block these</label>
+    <textarea id="allowlist" rows="4" placeholder="trusted-example.com"></textarea>
+  </section>
+
+  <section class="card">
+    <h2>Statistics</h2>
+    <p id="stats-line" class="help">Loading…</p>
+    <button class="btn" id="reset-stats-btn" type="button">Reset statistics</button>
+  </section>
+
+  <div class="save-row">
+    <button class="btn btn-primary" id="save-btn" type="button">Save options</button>
+    <span class="saved" id="saved-msg"></span>
+  </div>
+
+  <p class="fine-print">URL Sentinel analyses addresses on your device. Nothing is uploaded, tracked, or synced — except the optional Safe Browsing lookup above, when you choose to enable it with a key. Heuristics can be wrong in both directions: a Safe verdict is not a guarantee, and a Suspicious verdict is not proof of malice.</p>
+</main>
+<script type="module" src="options.js"></script>
+</body>
+</html>

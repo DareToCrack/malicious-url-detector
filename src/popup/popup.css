@@ -1,0 +1,154 @@
+/* URL Sentinel popup — simple light palette. */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  width: 380px;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #22262b;
+  background: #f7f7f4;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #ffffff;
+  border-bottom: 1px solid #e7e4de;
+}
+.logo { flex-shrink: 0; }
+.header h1 { margin: 0; font-size: 16px; line-height: 1.2; }
+.subtitle { margin: 0; font-size: 11px; color: #667085; }
+.options-link {
+  margin-left: auto;
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.options-link:hover { color: #1d4ed8; text-decoration: underline; }
+
+main { padding: 12px 14px; }
+.loading { color: #667085; text-align: center; padding: 24px 0; }
+
+.url-box {
+  background: #ffffff;
+  border: 1px solid #e7e4de;
+  border-radius: 8px;
+  padding: 8px 10px;
+  word-break: break-all;
+  font-size: 12px;
+  color: #667085;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.url-box strong { color: #22262b; }
+
+.verdict-card {
+  margin-top: 10px;
+  background: #ffffff;
+  border: 1px solid #e7e4de;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  text-align: center;
+}
+.score { font-size: 36px; font-weight: 700; line-height: 1; }
+.score small { font-size: 14px; color: #667085; font-weight: 400; }
+.band {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.band-safe { color: #15803d; background: #f0fdf4; }
+.band-suspicious { color: #b45309; background: #fef3c7; }
+.band-malicious { color: #b91c1c; background: #fef2f2; }
+.verdict-note { margin: 8px 0 0; color: #667085; font-size: 12px; }
+
+.reputation {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  background: #eff6ff;
+  color: #1e3a5f;
+  border: 1px solid #dbeafe;
+}
+.reputation.match { background: #fef2f2; color: #b91c1c; border-color: #fecaca; }
+
+.findings { margin-top: 10px; }
+.findings h2 { font-size: 12px; margin: 0 0 6px; color: #667085; text-transform: uppercase; letter-spacing: 0.04em; }
+.finding {
+  background: #ffffff;
+  border: 1px solid #e7e4de;
+  border-radius: 8px;
+  padding: 9px 10px;
+  margin-bottom: 6px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.finding-head { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.finding-title { font-weight: 600; }
+.points {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: #b45309;
+  background: #fef3c7;
+  border-radius: 999px;
+  padding: 1px 7px;
+}
+.finding-detail { margin: 4px 0 0; color: #667085; font-size: 12px; }
+.finding-why { margin: 4px 0 0; color: #667085; font-size: 12px; }
+.no-findings {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.advice {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.advice-safe { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+.advice-suspicious { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.advice-malicious { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+
+.actions { display: flex; gap: 8px; margin-top: 10px; }
+.btn {
+  flex: 1;
+  padding: 8px 6px;
+  border-radius: 8px;
+  border: 1px solid #e7e4de;
+  background: #ffffff;
+  color: #22262b;
+  font-size: 12px;
+  cursor: pointer;
+}
+.btn:hover { background: #f7f7f4; }
+.btn-primary { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+.btn-primary:hover { background: #1d4ed8; }
+.btn:disabled { opacity: 0.6; cursor: default; }
+
+.footer {
+  padding: 8px 14px 12px;
+  color: #667085;
+  font-size: 11px;
+  text-align: center;
+  border-top: 1px solid #e7e4de;
+}
+.error-box {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 12px;
+}
